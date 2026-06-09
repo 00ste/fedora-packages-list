@@ -4,8 +4,8 @@ echo "=============================="
 echo "Installing Flatpak packages..."
 echo "=============================="
 
-dnf_list="~/pkglist/flatpak-list.txt"
-dnf_lock="~/pkglist/flatpak-lock.txt"
+dnf_list=~/pkglist/flatpak-list.txt
+dnf_lock=~/pkglist/flatpak-lock.txt
 
 if [[ ! -f "$dnf_lock" ]]; then
 	touch "$dnf_lock"

@@ -5,8 +5,12 @@ echo "=========================="
 echo "Installing dnf packages..."
 echo "=========================="
 
-dnf_list="~/pkglist/dnf-list.txt"
-dnf_lock="~/pkglist/dnf-lock.txt"
+dnf_list=~/pkglist/dnf-list.txt
+dnf_lock=~/pkglist/dnf-lock.txt
+
+if [[ ! -f "$dnf_lock" ]]; then
+	touch "$dnf_lock"
+fi
 
 pkgs_to_install=$(diff "$dnf_list" "$dnf_lock" | grep '^< [^#]' | sed 's/^<\ //')
 pkgs_to_remove=$(diff "$dnf_list" "$dnf_lock" | grep '^> [^#]' | sed 's/^>\ //')
