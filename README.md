@@ -10,16 +10,23 @@ The `install.sh` script does the following:
 - removes all packages in `*-lock.txt` that are not in `*-list.txt`
 - overwrites `*-lock.txt` with the contents of `*-list.txt`
 
+The list and lock files are stored into `~/.config/pkglist`, and they will be generated when running the script if not already present. The list file should contain a package for each line.
+
 To install a package, instead of running `sudo dnf install <package>` or
-`flatpak install <package>`, add the package name inside the file `dnf-list.txt`
-for dnf packages and `flatpak-list.txt` for flatpak packages, then run
-`install.sh`.
+`flatpak install <package>`, add the package name inside the file `dnf-list.txt` for dnf packages and `flatpak-list.txt` for flatpak packages, then run `install.sh`. The list file should contain one package name per line, lines starting with a hash `#` are treated as comments. For example:
 
-> Even though they are called "lock" files, `*-lock.txt` are not real lock
-> files, that lock specific versions of packages. Instead, they just contain the
-> "currently installed" packages.
+```
+# Internet
+chromium
+firefox
+thunderbird
 
-The scripts `*-install.sh` look for the respective list and lock files in the
-directory `~/pkglist`, so make sure to edit those scripts if you place them in a
-different location. I was too lazy to set up a better solution, and I didn't
-want this system to get overly complicated.
+# Networking
+syncthing
+podman
+docker-ce
+docker-ce-cli
+filezilla
+
+# ...
+```
