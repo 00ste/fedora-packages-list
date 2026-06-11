@@ -1,5 +1,6 @@
 # Productivity
-alacritty
+#alacritty
+kitty
 #codium
 micro
 zed
@@ -20,6 +21,7 @@ syncthing
 # Office
 dolphin
 okular
+gwenview
 xournalpp
 rnote
 foliate
@@ -27,7 +29,6 @@ krita
 inkscape
 kolourpaint
 blender
-kdenlive
 vlc
 mpv
 
