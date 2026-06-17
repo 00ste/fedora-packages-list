@@ -7,7 +7,7 @@ echo "=============================="
 
 conf_path=~/.config/pkglist
 list_path="$conf_path/flatpak-list.txt"
-lock_path="$conf_path/flatpak-lock.txt"
+lock_path="$conf_path/.flatpak-lock.txt"
 
 if [[ ! -f "$list_path" ]]; then
     mkdir -p "$conf_path"
